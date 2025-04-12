@@ -15,11 +15,12 @@ git clone https://github.com/YosysHQ/picorv32
 cd picorv32
 
 # make and build
-make download-tools                     
-make -j8 build-riscv32i-tools
+make download-tools
+./configure --with-arch=rv32i --prefix=/opt/riscv32
+make -j8
 
 # add consistent shell PATH
-echo 'export PATH=/opt/riscv32imc/bin:$PATH' >> ~/.bashrc
+echo 'export PATH=/opt/riscv32/bin:$PATH' >> ~/.bashrc
 
 # verify installation by checking version - in a new terminal run the following
 source ~/.bashrc
