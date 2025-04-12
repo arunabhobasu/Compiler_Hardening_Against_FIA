@@ -1,1 +1,0 @@
-sshpass -p "T@rget_26" scp test.txt arunabhobasu@ece-lnx-03.ad.ufl.edu:/home/UFAD/arunabhobasu/Documents/compiler/

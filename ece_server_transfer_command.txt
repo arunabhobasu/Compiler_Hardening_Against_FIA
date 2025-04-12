@@ -1,0 +1,3 @@
+## navigate to folder containing files/folder
+
+sshpass -p "<insert_gatorlink_password>" scp <file_name> arunabhobasu@ece-lnx-03.ad.ufl.edu:/home/UFAD/arunabhobasu/Documents/
