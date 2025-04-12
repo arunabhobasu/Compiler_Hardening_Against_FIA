@@ -1,0 +1,4 @@
+source /apps/settings
+export SNPS_SIM_DEFAULT_GUI=dve
+vcs -kdb testbench.v picorv32.v -o testbench.vvp +v2k +define+COMPRESSED_ISA=-DCOMPRESSED_ISA -debug_acc+all -debug_region+cell+encrypt -full64
+./testbench.vvp -gui
