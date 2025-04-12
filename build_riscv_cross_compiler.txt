@@ -1,0 +1,30 @@
+# Give sudo access to all commands
+sudo su
+
+#Install dependencies first
+sudo apt-get install autoconf automake autotools-dev curl libmpc-dev \
+    libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo \
+    gperf libtool patchutils bc zlib1g-dev git libexpat1-dev
+
+# create install directory at the top level root directory /opt/ and take ownership
+sudo mkdir -p /opt/riscv32
+sudo chown $USER /opt/riscv32
+
+# clone picorv32 repo in your working directory or use the one provided as reference
+git clone https://github.com/YosysHQ/picorv32
+cd picorv32
+
+# make and build
+make download-tools                     
+make -j8 build-riscv32i-tools
+
+# add consistent shell PATH
+echo 'export PATH=/opt/riscv32imc/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+
+
+
+
+
+
