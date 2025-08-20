@@ -1,0 +1,15 @@
+
+FaultGenerate
+{
+    # Set timing for frequency of transient fault insertion
+    Timing("cycle1", CycleTime 20000ps, Offset 5000ps)
+
+    # Create transient faults
+    NA ~ (27^28) { "done_fanin.done_reg.Q" }
+}
+
+Coverage
+{
+    "Security Property Violation Rate" = "(DD + OA)/(NA + DD + ND + OA)";
+}
+

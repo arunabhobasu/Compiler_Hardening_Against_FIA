@@ -1,0 +1,11 @@
+#! /bin/bash
+
+source /apps/settings
+
+export SNPS_SIM_DEFAULT_GUI=dve
+
+# The following generates a compiled simulation setting
+# Run ./<testbench_name>.vvp -gui to open with dve, then run the simulation in dve
+vcs -kdb tb_top.v ../designs/done_fanin.v -v ../designs/saed32nm.v -o tb_top.vvp +v2k -debug_acc+all -debug_region+cell+encrypt -full64
+
+

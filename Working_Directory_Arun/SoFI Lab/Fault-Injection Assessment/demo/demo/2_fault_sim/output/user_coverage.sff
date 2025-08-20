@@ -1,0 +1,109 @@
+Version("1.1")
+Date("05/04/20 14:27:27")
+User("huanyuwang")
+Tool("FMGR")
+Info("  Type:    Fault Coverage Report")
+Info("  Version: P-2019.06-SP2 (64-bit, Nov 16 2019)")
+Info("  Models:  All")
+Info("  Classes: All")
+
+FunctionalBlocks{
+     1 design {
+           1  test1 0ps {F:124 ND:104 DD:20}
+    }
+}
+
+FaultInfo{
+    FubNum;
+    TestNum;
+    Attempts;
+    NumPot;
+}
+
+Coverage {
+    "Security Property Violation Rate" = "(DD + OA)/(NA + DD + ND + OA)";
+}
+
+FaultList{
+    Timing("cycle1", CycleTime 20000ps, Offset 10000ps)
+
+    UseTiming("cycle1")
+
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_3_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_2_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_2_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_2_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  0    0    1    0> ND ~ (24, 26:27) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (25) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  0    0    1    0> ND ~ (24, 26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (25, 27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:25, 27) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (26) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:25) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (26:27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:27) {PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  0    0    1    0> ND ~ (24:26) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+    <  1    1    1    0> DD ~ (27) {PORT "done_fanin.done_reg.Q" + PORT "done_fanin.dcnt_reg_3_.Q" + PORT "done_fanin.dcnt_reg_2_.Q" + PORT "done_fanin.dcnt_reg_1_.Q" + PORT "done_fanin.dcnt_reg_0_.Q"}
+}
+#------------------------------------------------------------------------------
+# Faults listed:       Prime: 124        Total: 124
+#------------------------------------------------------------------------------
+# Fault Coverage Summary
+#
+#                                        Prime             Total
+#------------------------------------------------------------------------------
+# Total Faults:                            124               124
+#
+# Dropped Detected                 DD       20  16.13%        20  16.13%
+# Dropped Potential                PD        0   0.00%         0   0.00%
+# Not Detected                     ND      104  83.87%       104  83.87%
+#
+# Faults not detected yet:
+#   Not simulated yet:                       0   0.00%         0   0.00%
+#   Simulated 1 to 5 times:                104  83.87%       104  83.87%
+#   Simulated 6 to 10 times:                 0   0.00%         0   0.00%
+#   Simulated > 10 times:                    0   0.00%         0   0.00%
+#
+# Faults potentially detected:
+#   Possible 1 to 5 times:                   0   0.00%         0   0.00%
+#   Possible 6 to 10 times:                  0   0.00%         0   0.00%
+#   Possible > 10 times:                     0   0.00%         0   0.00%
+#
+# Test Coverage                                 16.13%            16.13%
+# Fault Coverage                                16.13%            16.13%
+# Security Property Violation Rate              16.13%            16.13%
+#------------------------------------------------------------------------------

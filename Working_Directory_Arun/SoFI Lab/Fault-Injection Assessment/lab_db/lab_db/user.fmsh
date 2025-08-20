@@ -1,0 +1,26 @@
+# Informative, enables maximum messaging in Fault Manager
+set(var=[resources], messages=[all])
+
+# Use Standard Fault File (SFF) format
+set(var=[defines], format=[standard])
+set(var=[defines], dictionary.enable=[1])
+
+# Read the SFF file, user.sff
+set(var=[fdef], method=[fr], fr.fr=[user.sff],abort=[error])
+
+# Import the design and the fault list
+design()
+
+# Import the tests
+addtst(test=[test1], stim=[input.vcd], stimtype=[vcd])
+
+# Run fault injection
+# Note: Testability is a dependency and will run automatically
+fsim()
+#fsimlog(test=[*])
+#history(format=[long],file=[history.txt])
+
+
+# Create coverage report
+coverage(file=[user_coverage.sff])
+coverage(type=[dictionary], file=[dictionary.sff])

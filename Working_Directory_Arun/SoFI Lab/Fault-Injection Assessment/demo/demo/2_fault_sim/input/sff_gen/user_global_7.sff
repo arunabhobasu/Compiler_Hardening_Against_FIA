@@ -1,0 +1,141 @@
+
+FaultGenerate
+{
+    # Set timing for frequency of transient fault insertion
+    Timing("cycle1", CycleTime 10000ps, Offset 2500ps)
+
+    # Create transient faults
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+    NA ~ (5^6, 6^7, 7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" + FLOP "RSA_binary_v2.FSM_reg_1_.Q" + FLOP "RSA_binary_v2.FSM_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_0_.Q" + FLOP "RSA_binary_v2.round_index_reg_1_.Q" + FLOP "RSA_binary_v2.round_index_reg_2_.Q" + FLOP "RSA_binary_v2.round_index_reg_3_.Q" }
+}    #  Total Faults: 381
+
+Coverage
+{
+    "Security Property Violation Rate" = "(DD + OA)/(NA + DD + ND + OA)";
+}
+

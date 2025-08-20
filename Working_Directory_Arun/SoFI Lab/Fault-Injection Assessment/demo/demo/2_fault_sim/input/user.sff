@@ -1,0 +1,45 @@
+
+FaultGenerate
+{
+    # Set timing for frequency of transient fault insertion
+    Timing("cycle1", CycleTime 20000ps, Offset 10000ps)
+
+    # Create transient faults
+    NA ~ (24:27) { "done_fanin.done_reg.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_3_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_2_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_1_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_3_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_2_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_1_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_2_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_1_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_1_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_1_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_2_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_1_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_1_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_1_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_1_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_1_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_1_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_1_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_1_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_1_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_1_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (24:27) { "done_fanin.done_reg.Q" + "done_fanin.dcnt_reg_3_.Q" + "done_fanin.dcnt_reg_2_.Q" + "done_fanin.dcnt_reg_1_.Q" + "done_fanin.dcnt_reg_0_.Q" }
+}
+
+Coverage
+{
+    "Security Property Violation Rate" = "(DD + OA)/(NA + DD + ND + OA)";
+}
+

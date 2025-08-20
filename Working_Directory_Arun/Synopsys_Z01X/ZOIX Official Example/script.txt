@@ -1,0 +1,93 @@
+1.  Describe that you will show two demos, one for permanent faults and one for transient faults.
+
+2.  The methodology/flow is the same for both, it just simulates different types of faults.
+
+3.  risc_PERMANENT (stuck-at faults)
+
+4.  Show strobe.sv
+    *This is a user created file.
+    $fs_inject - When to insert faults into the simulation
+    First loop is to identify faults that may cause a device failure (safe/dangerous)
+    Second is to identify faults detected in a safety mechanism (diagnosed/not diag)
+    Use $fs_compare and $fs_set_status/$fs_drop_status to set fault detection
+
+5.  Show compile from run.csh
+    Z01X compiler takes a list of file, in this case from run.f and command line an creates:
+      Desgin Database (sim.zdb)
+      Simulator Executable (zoix.sim)
+    Show zoix.log:
+      Version at the top
+      Command echo to confirm what files were compiled
+      Design contents view (primitives, etc)
+     Info: Z01X compilation complete == Success
+
+6.  Show user.sff file
+    *This is a user created file.
+    - StatusDefinitions - Sets the fault classes that will be used
+    - PromotionTable - Defines how different status' act when merged
+    - StatusGroups - Groups status' for reporting
+    - FaultGenerate - Defines how to create faults
+      Show that the first one will create faults on RTL registers
+      The second on module cell ports throughout the design
+
+7.  Show Fault Manager Input Script
+    *This is a user created file.
+    The syntax is defined in the Z01X Safety Manual.
+    We will demonstrate each of the commands in the following steps. 
+
+8.  Import the Design and Fault List into Fault Manager
+    Run fmsh and enter or cut/paste the commands manually
+    
+    set(var=[resources], messages=[all])
+    Turn on maximum verbosity to show what is happening with fmsh
+    
+    set(var=[defines], format=[standard])
+    Set the format of fault files to be read and written as SFF (Standard Fault Format)
+
+    set(var=[fdef], method=[fr], fr.fr=[user.sff])
+    Set the fault list creation to read the file user.sff
+
+    design()
+    Read in the Design Database and Simulator Executable.
+    Read user.sff and create the fault list.
+
+    The first commands are setting variables to control behavior.  The design 
+    command is what causes the action to happen.
+
+    Show the output in fmsh.log/screen output.
+    208 faults created
+    Functional block with the whole design also created (208 faults).
+    Fault creation log: fr2fdef.log
+    FuB creation log: __fubs__/design/design.log
+
+9.  Import tests
+
+    addtst(test=[user_test1], stimtype=[tb])
+    This will create symbolic links to the design database and simulation executable.
+
+10. Run testability
+    Run automatically with: fsim()
+    Logfiles:
+      Toggle simulation: __tests__/user_test1/zoix_rt.log
+      Testability analysis: __fubs__/design/user_test1/coats.log
+
+    Show testability.txt - This has the testability result in it.
+
+11. Run fault simulation
+    Fault simulation will have run with the command in Step 10.
+    Important things to show:
+    Fault selection for test: __fubs__/design/user_test1/fdef.log
+    Fault simulation logfile: __fubs__/design/user_test1/simout-N0
+    Merging results: __fubs__/design/user_test1/boots.log
+
+    When complete, fmsh prints a results summary for the test, and for the
+    current state of the design.
+
+12. Create coverage reports
+    coverage(file=[user_coverage.sff]) 
+
+    This command creates the output report specified.
+    Logfile: fault_report.log
+    
+
+13.  Repeat steps 4-12 for risc_SEU

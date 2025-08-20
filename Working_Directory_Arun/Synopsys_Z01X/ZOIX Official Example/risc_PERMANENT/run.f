@@ -1,0 +1,12 @@
+test.v
+alu.v
+clocks.v
+counter.v
+cpu.v
+decoder.v
+dff.v
+mem.v
+mux2x5.v
+register.v
+reseter.v
+tricon.v

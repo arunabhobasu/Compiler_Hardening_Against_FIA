@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+                               Testability Report                               
+                         Basis: Selected fault quality                          
+                    Report Date: Monday, May 04 2020, 14:27
+                    
+                      Total: 124  Prime: 124  Collapsed: 0                      
+
+-------------------------------------------------------------------------------
+                         Tests already fault simulated                         
+-------------------------------------------------------------------------------
+ Test     Selected  Selected  Selected  Selected  Selected  
+ Name:    fault     fault     fault     untested  fault     
+          quality:  count:    avg       faults:   avg       
+                              tenacity:           test      
+                                                  count:    
+-------------------------------------------------------------------------------
+ test1    1026.432       124     15.19       124      0.00  
+

@@ -1,0 +1,118 @@
+Step 1:
+
+Compile the design.
+
+Inputs: 
+  run.f - List of design files to compile
+  strobe.sv - Strobe data for fault simulation
+Command:
+  $ZOIXHOME/bin/zoix ...
+Outputs:
+  Z01X created executable (zoix.sim)
+  Z01X created design database (sim.zdb)
+  Z01X created logfile (zoix.log)
+
+Step 2:
+
+Configure the fault universe.
+
+Edit the Standard Fault File (risc.sff)
+
+The Standard Fault File (SFF) is used to configure where permanent faults are
+created, and when and wher transient faults are injected.
+
+Inputs:
+  None or SFF template
+Command:
+  None
+Outputs:
+  Updated SFF
+
+Step 3:
+
+Run Fault Manager (fmsh).
+
+fmsh is the controlling process for running testability, fault injections, and
+creating coverage reports.
+
+Inputs:
+  User configured Fault Manager Script
+  Z01X created Design Database
+  User configured Standard Fault File
+  User created simulus (VCD, eVCD, testbench)
+Command:
+  $ZOIXHOME/bin/fmsh -load risc.fmsh
+Outputs:
+  Z01X created coverage reports
+  fmsh logfile
+
+NOTE: All steps after Step 3 are run through the fault manager interface, fmsh
+Step 4:
+
+Import Design and Fault List
+
+Inputs:
+  Z01X created design database and executable
+  User configured SFF
+Command:
+  set(var=[defines], format=[standard])
+  set(var=[fdef], method=[fr], fr.fr=[user_coverage.sff])
+  design()
+Outputs:
+  Z01X created fault import logfile (fr2fdef.log)
+  Z01X created fmsh log (fmsh.log)
+  Z01X created Fault Definition File (sim.fdef)
+
+Step 5:
+
+Import Tests
+
+Inputs:
+  User created stimulus file(s)
+Command:
+  addtst(test=[user_test1], stimtype=[tb])
+Outputs:
+  Z01X created fmsh log (fmsh.log)
+
+Step 6:
+
+Run Testability
+
+Inputs:
+  Z01X created design database and executable
+  User created stimulus
+Command:
+  None.  Automatically run by fsim command.
+Outputs:
+  Z01X created testability report (testability.txt)
+  Testability logfiles (in __tests__ and __fubs__)
+  Z01X created fmsh log (fmsh.log)
+
+Step 7:
+
+Run Fault Simulation
+
+Inputs:
+  Z01X created design database and executable
+  User created stimulus
+  Z01X created Fault Definition File (sim.fdef)
+Command:
+  fsim()
+Outputs:
+  Z01X created Fault Definition File (sim.fdef)
+  Z01X created fmsh log (fmsh.log)
+  Z01X created logfiles (__fubs__/design/user_test1/simout-N*)
+
+Step 8:
+
+Create Coverage Reports
+
+Inputs:
+  Z01X created design database and executable
+  Z01X created Fault Definition File (sim.fdef)
+Command:
+  coverage(file=[sim.sff])
+Outputs:
+  Z01X created text fault coverage report
+  Z01X created fault report logfile (fault_report.log)
+  Z01X created fmsh log (fmsh.log)

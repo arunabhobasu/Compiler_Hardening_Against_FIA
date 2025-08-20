@@ -1,0 +1,2 @@
+source /apps/settings
+dve -vpd wave.vcd.vpd -session session.wave.vcd.vpd.tcl &

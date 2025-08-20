@@ -1,0 +1,16 @@
+Total Faults: 124
+Effective Faults: 20
+Critical Faults: 3
+
+    NA ~ (27) { FLOP "done_fanin.done_reg.Q" }
+    NA ~ (25) { FLOP "done_fanin.dcnt_reg_3_.Q" + FLOP "done_fanin.dcnt_reg_0_.Q" }
+    NA ~ (26) { FLOP "done_fanin.dcnt_reg_3_.Q" + FLOP "done_fanin.dcnt_reg_1_.Q" + FLOP "done_fanin.dcnt_reg_0_.Q" }
+
+Feasible Faults: 1
+
+    NA ~ (25) { FLOP "done_fanin.dcnt_reg_3_.Q" + FLOP "done_fanin.dcnt_reg_0_.Q" }
+
+Critical Locations: 1
+
+    FLOP "done_fanin.dcnt_reg_3_.Q"
+

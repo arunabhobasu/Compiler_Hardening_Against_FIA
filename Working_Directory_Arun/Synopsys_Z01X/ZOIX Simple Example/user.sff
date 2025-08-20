@@ -1,0 +1,15 @@
+
+FaultGenerate
+{
+    # Set timing for frequency of transient fault insertion
+    Timing("cycle1", CycleTime 10000ps, Offset 2500ps)
+
+    # Create transient faults
+    NA ~ (7^8) { FLOP "RSA_binary_v2.FSM_reg_0_.Q" }
+}    #  Total Faults: 1
+
+Coverage
+{
+    "Security Property Violation Rate" = "(DD + OA)/(NA + DD + ND + OA)";
+}
+
